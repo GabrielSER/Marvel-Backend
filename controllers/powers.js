@@ -1,11 +1,11 @@
-const {charactersModel} = require ("../models")
+const {powersModel} = require ("../models")
 /**
  * Obtener lista de la base de datos
  * @param {*} req 
  * @param {*} res 
  */
 const getItems = async (req, res) =>{
-    const data = await charactersModel.find({});
+    const data = await powersModel.find({});
     res.send({data})
 };
 /**
@@ -14,12 +14,9 @@ const getItems = async (req, res) =>{
  * @param {*} res 
  */
 const getItem = async (req, res) =>{
-    const data = await charactersModel.find({id: req.params.id});
+    const data = await powersModel.find({name: req.params.name});
     res.send({data})};
 
-const getPowers = async (req, res) =>{
-    const data = await charactersModel.find({name: req.params.name}).populate("powers");
-    res.send({data})};
 /**
  * Insertar un registro
  * @param {*} req 
@@ -28,7 +25,7 @@ const getPowers = async (req, res) =>{
 const createItem = async (req, res) =>{
     const { body } = req
     console.log(body)
-    const data = await charactersModel.create(body)
+    const data = await powersModel.create(body)
     res.send({data})
 };
 /**
@@ -44,4 +41,4 @@ const updateItem = (req, res) =>{};
  */
 const deleteItem = (req, res) =>{};
 
-module.exports = { getItems, getItem, createItem, updateItem, deleteItem, getPowers };
+module.exports = { getItems, getItem, createItem, updateItem, deleteItem };

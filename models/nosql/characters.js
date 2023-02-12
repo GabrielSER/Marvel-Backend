@@ -19,7 +19,7 @@ const CharacterScheme = new Schema(
                     return true;
                 },
                 message: "ERROR_URL",
-            }, 
+            }
         },
         image:{
             type:String,
@@ -261,12 +261,12 @@ const CharacterScheme = new Schema(
                 type:Number
             },
         },
-        abilities:{
+        abilities:[{
             type:String
-        },
-        weaknesses:{
+        }],
+        weaknesses:[{
             type:String
-        },
+        }],
         type:{
             type:["hero","villain","npc"],
             default: "hero"

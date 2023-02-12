@@ -24,6 +24,10 @@ const PowerScheme = new Schema(
         character:{
             type:Schema.Types.ObjectId,
             ref: "characters"
+        },
+        form:{
+            type:Schema.Types.ObjectId,
+            ref: "forms"
         }
     },
     {
