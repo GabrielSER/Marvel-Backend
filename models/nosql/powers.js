@@ -22,12 +22,10 @@ const PowerScheme = new Schema(
             type:String
         },
         character:{
-            type:Schema.Types.ObjectId,
-            ref: "characters"
+            type:String
         },
         form:{
-            type:Schema.Types.ObjectId,
-            ref: "forms"
+            type:String
         }
     },
     {

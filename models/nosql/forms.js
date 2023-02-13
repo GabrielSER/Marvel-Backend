@@ -259,12 +259,10 @@ const FormScheme = new Schema(
             type:String
         },
         powers:[{
-            type: Schema.Types.ObjectId,
-            ref: "powers"
+            type: String
         }],
         character:{
-            type:Schema.Types.ObjectId,
-            ref: "characters"
+            type:String
         }
     },
     {

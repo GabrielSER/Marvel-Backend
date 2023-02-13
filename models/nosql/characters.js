@@ -272,12 +272,10 @@ const CharacterScheme = new Schema(
             default: "hero"
         },
         powers:[{
-            type: Schema.Types.ObjectId,
-            ref: "powers"
+            type: String,
         }],
         forms:[{
-            type: Schema.Types.ObjectId,
-            ref: "forms"
+            type: String,
         }],
         
     },
