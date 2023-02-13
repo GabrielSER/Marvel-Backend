@@ -123,6 +123,9 @@ const CharacterScheme = new Schema(
             animalHandling:{
                 type:Number
             },
+            arcana:{
+                type:Number
+            },
             deception:{
                 type:Number
             },
