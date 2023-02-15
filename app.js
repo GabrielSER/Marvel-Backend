@@ -1,6 +1,6 @@
-require("dotenv").config()
-const express = require("express")
-const cors = require("cors")
+require('dotenv').config()
+const express = require('express')
+const cors = require('cors')
 const dbConnect = require ('./config/mongo')
 const app = express()
 
@@ -14,7 +14,7 @@ const port = process.env.PORT
  */
 
 //TODO localhost/api/_______
-app.use("/api",require("./routes"))
+app.use('/api',require('./routes'))
 
 
 app.listen(port,()=>{

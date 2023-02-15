@@ -1,5 +1,5 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const CharacterScheme = new Schema(
     {
@@ -16,18 +16,18 @@ const CharacterScheme = new Schema(
             type:String,
             validate:{
                 validator: (req) => {
-                    return true;
+                    return true
                 },
-                message: "ERROR_URL",
+                message: 'ERROR_URL',
             }
         },
         image:{
             type:String,
             validate:{
                 validator: (req) => {
-                    return true;
+                    return true
                 },
-                message: "ERROR_URL",
+                message: 'ERROR_URL',
             }, 
         },
         stats:{
@@ -271,8 +271,8 @@ const CharacterScheme = new Schema(
             type:String
         }],
         type:{
-            type:["hero","villain","npc"],
-            default: "hero"
+            type:['hero','villain','npc'],
+            default: 'hero'
         },
         powers:[{
             type: String,
@@ -286,6 +286,6 @@ const CharacterScheme = new Schema(
         timestamps:true, //TODO cratedAt, updatedAt
         versionKey:false
     }
-);
+)
 
-module.exports = mongoose.model("characters", CharacterScheme)
+module.exports = mongoose.model('characters', CharacterScheme)

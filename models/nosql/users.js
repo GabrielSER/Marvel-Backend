@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
 const UserScheme = new mongoose.Schema(
     {
@@ -16,14 +16,14 @@ const UserScheme = new mongoose.Schema(
             type:String
         },
         role:{
-            type:["player","master","admin"],
-            default: "player"
+            type:['player','master','admin'],
+            default: 'player'
         }
     },
     {
         timestamps:true, //TODO cratedAt, updatedAt
         versionKey:false
     }
-);
+)
 
-module.exports = mongoose.model("users", UserScheme)
+module.exports = mongoose.model('users', UserScheme)

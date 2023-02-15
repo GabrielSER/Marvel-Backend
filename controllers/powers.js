@@ -1,74 +1,53 @@
-const {powersModel} = require ("../models")
-const { handleHttpError } = require("../utils/handleError");
-const { matchedData } = require("express-validator");
+const { powersModel } = require('../models')
+const { ErrorCode, handleHttpError } = require('../utils/apiError')
+const { matchedData } = require('express-validator')
+
 /**
  * Obtener lista de la base de datos
- * @param {*} req 
- * @param {*} res 
  */
-const getItems = async (req, res) =>{
-    const data = await powersModel.find({});
-    res.send({data})
-};
+const getPowers = async () =>
+  await powersModel.find({})
+
 /**
  * Obtener un detalle
- * @param {*} req 
- * @param {*} res 
  */
-const getItem = async (req, res) =>{try{
-    const data = await powersModel.findById(req.params.id);    
-    res.send({data});
-} catch (e) {
-  handleHttpError(res, e);
-}
-};
+const getPower = async (id) =>
+  await powersModel.findById(id)
 
 /** 
  * Insertar un registro
- * @param {*} req 
- * @param {*} res 
  */
-const createItem = async (req, res) =>{
-    const { body } = req
-    console.log(body)
-    const data = await powersModel.create(body)
-    res.send({data})
-};
+const createPower = async (Power) =>
+  await powersModel.create(Power)
+
 /**
  * Actualizar un registro
- * @param {*} req 
- * @param {*} res 
  */
-const updateItem = async (req, res) =>{ 
-    try {
-        const id = req.params.id;
-        const updates = req.body;
-        const options = { new: true };
-  
-        const result = await powersModel.findByIdAndUpdate(id, updates, options);
-        if (!result) {
-          throw createError(404, 'Character does not exist');
-        }
-        res.send(result);
-      } catch (error) {
-        console.log(error.message);
-      }
-};
+const updatePower = async (id, changes) => {
+  const result = await powersModel.findByIdAndUpdate(id, changes, { new: true })
+  if (!result) {
+    throw ApiError(ErrorCode.NOT_FOUND)
+  }
+  return result
+}
+
+
 /**
  * Eliminar un registro
- * @param {*} req 
- * @param {*} res 
  */
-const deleteItem = async (req, res) =>{try {
-    const id = req.params.id;
-    const data = await powersModel.findByIdAndDelete(id);
-    // console.log(result);
-    if (!data) {
-      throw createError(404, 'Product does not exist.');
-    }
-    res.send(data);
-  } catch (e) {
-    handleHttpError(res, e);
-  }};
+const deletePower = async (id) => {
+  const result = await powersModel.findByIdAndDelete(id)
+  // console.log(result)
+  if (!result) {
+    throw ApiError(ErrorCode.NOT_FOUND)
+  }
+  return result
+}
 
-module.exports = { getItems, getItem, createItem, updateItem, deleteItem };
+module.exports = {
+  getPowers,
+  getPower,
+  createPower,
+  updatePower,
+  deletePower
+}

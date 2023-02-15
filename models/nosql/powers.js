@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const PowerScheme = new Schema(
     {
@@ -21,6 +21,9 @@ const PowerScheme = new Schema(
         description:{
             type:String
         },
+        module:{
+            type:String
+        },
         character:{
             type:String
         },
@@ -31,6 +34,6 @@ const PowerScheme = new Schema(
     {
             
     }
-);
+)
 
-module.exports = mongoose.model("powers", PowerScheme)
+module.exports = mongoose.model('powers', PowerScheme)

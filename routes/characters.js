@@ -1,13 +1,24 @@
-const express = require("express");
-const router = express.Router();
-const { getItems, getItem, createItem, updateItem, deleteItem } = require("../controllers/characters");
-const { validateObjectDataUpdate, validateId } = require("../validators/characters");
+const express = require('express')
+const router = express.Router()
+const { handleError } = require('../utils/apiError')
+const {
+    getCharacters,
+    getCharacter,
+    createCharacter,
+    updateCharacter,
+    deleteCharacter
+} = require('../controllers/characters')
 
-router.get("/", getItems)
-router.get("/:id", getItem)
-router.post("/", createItem)
-router.put("/:id", updateItem)
-router.delete("/:id", deleteItem)
+
+router.get('/', handleError(getCharacters))
+
+router.get('/:id', handleError(req => getCharacter(req.params.id)))
+
+router.post('/', handleError(req => createCharacter(req.body)))
+
+router.put('/:id', handleError(req => updateCharacter(req.params.id, req.body)))
+
+router.delete('/:id', handleError(req => deleteCharacter(req.params.id)))
 
 
 module.exports = router
