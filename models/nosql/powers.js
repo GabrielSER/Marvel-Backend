@@ -21,6 +21,21 @@ const PowerScheme = new Schema(
         description:{
             type:String
         },
+        amountDice:{
+            type:Number
+        },
+        diceNumber:{
+            type:Number
+        },
+        healing:{
+            type:Boolean
+        },
+        statusEffect:[{
+            type:String
+        }],
+        chance:[{
+            type:Number
+        }],
         module:{
             type:String
         },

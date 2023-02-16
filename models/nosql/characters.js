@@ -284,7 +284,7 @@ const CharacterScheme = new Schema(
     },
     {
         timestamps:true, //TODO cratedAt, updatedAt
-        versionKey:false
+        versionKey:false    
     }
 )
 
