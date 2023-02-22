@@ -11,8 +11,12 @@ const getPowers = async () =>
 /**
  * Obtener un detalle
  */
-const getPower = async (id) =>
-  await powersModel.findById(id)
+const getPower = async (id) =>{
+  return await powersModel.findById(id)
+
+}
+ 
+  
 
 /** 
  * Insertar un registro
