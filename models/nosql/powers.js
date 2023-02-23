@@ -3,51 +3,51 @@ const Schema = mongoose.Schema
 
 const PowerScheme = new Schema(
     {
-        name:{
-            type:String
+        name: {
+            type: String
         },
-        level:{
-            type:Number
+        level: {
+            type: Number
         },
-        bonusDamage:{
-            type:String,
+        bonusDamage: {
+            type: String,
         },
-        type:{
-            type:String
+        type: {
+            type: String
         },
-        skillCheck:{
-            type:String
+        skillCheck: {
+            type: String
         },
-        description:{
-            type:String
+        description: {
+            type: String
         },
-        amountDice:{
-            type:Number
+        amountDice: {
+            type: Number
         },
-        diceNumber:{
-            type:Number
+        diceNumber: {
+            type: Number
         },
-        healing:{
-            type:Boolean
+        healing: {
+            type: Boolean
         },
-        statusEffect:[{
-            type:String
+        statusEffect: [{
+            type: String
         }],
-        chance:[{
-            type:Number
+        chance: [{
+            type: Number
         }],
-        module:{
-            type:String
+        module: {
+            type: String
         },
-        character:{
-            type:String
+        character: {
+            type: String
         },
-        form:{
-            type:String
+        form: {
+            type: String
         }
     },
     {
-            
+
     }
 )
 

@@ -2,27 +2,27 @@ const mongoose = require('mongoose')
 
 const UserScheme = new mongoose.Schema(
     {
-        name:{
-            type:String
+        name: {
+            type: String
         },
-        age:{
-            type:Number
+        age: {
+            type: Number
         },
-        email:{
-            type:String,
-            unique:true
+        email: {
+            type: String,
+            unique: true
         },
-        password:{
-            type:String
+        password: {
+            type: String
         },
-        role:{
-            type:['player','master','admin'],
+        role: {
+            type: ['player', 'master', 'admin'],
             default: 'player'
         }
     },
     {
-        timestamps:true, //TODO cratedAt, updatedAt
-        versionKey:false
+        timestamps: true, //TODO cratedAt, updatedAt
+        versionKey: false
     }
 )
 

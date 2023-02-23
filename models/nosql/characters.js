@@ -3,288 +3,288 @@ const Schema = mongoose.Schema
 
 const CharacterScheme = new Schema(
     {
-        name:{
-            type:String
+        name: {
+            type: String
         },
-        alterego:{
-            type:String
+        alterego: {
+            type: String
         },
-        description:{
-            type:String
+        description: {
+            type: String
         },
-        logo:{
-            type:String,
-            validate:{
+        logo: {
+            type: String,
+            validate: {
                 validator: (req) => {
                     return true
                 },
                 message: 'ERROR_URL',
             }
         },
-        image:{
-            type:String,
-            validate:{
+        image: {
+            type: String,
+            validate: {
                 validator: (req) => {
                     return true
                 },
                 message: 'ERROR_URL',
-            }, 
-        },
-        stats:{
-            strength:{
-                type:Number
-            },
-            intelligence:{
-                type:Number
-            },
-            durability:{
-                type:Number
-            },
-            agility:{
-                type:Number
-            },
-            wisdom:{
-                type:Number
-            },
-            charisma:{
-                type:Number
-            },
-            perception:{
-                type:Number
-            },
-            hp:{
-                type:Number
-            },
-            power:{
-                type:Number
-            },
-            defense:{
-                type:Number
-            },
-            melee:{
-                type:Number
-            },
-            energyprojection:{
-                type:Number
-            },
-            speed:{
-                type:Number
-            },
-            luck:{
-                type:Number
             },
         },
-        skills:{
-            acrobatics:{
-                type:Number
+        stats: {
+            strength: {
+                type: Number
             },
-            accuracy:{
-                type:Number
+            intelligence: {
+                type: Number
             },
-            athletics:{
-                type:Number
+            durability: {
+                type: Number
             },
-            aerialPiloting:{
-                type:Number
+            agility: {
+                type: Number
             },
-            bikePiloting:{
-                type:Number
+            wisdom: {
+                type: Number
             },
-            heavyEquipmentPiloting:{
-                type:Number
+            charisma: {
+                type: Number
             },
-            lockpicking:{
-                type:Number
+            perception: {
+                type: Number
             },
-            meleeWeapons:{
-                type:Number
+            hp: {
+                type: Number
             },
-            motorVehiclePiloting:{
-                type:Number
+            power: {
+                type: Number
             },
-            pickpocket:{
-                type:Number
+            defense: {
+                type: Number
             },
-            rangedWeapons:{
-                type:Number
+            melee: {
+                type: Number
             },
-            stealth:{
-                type:Number
+            energyprojection: {
+                type: Number
             },
-            throw:{
-                type:Number
+            speed: {
+                type: Number
             },
-            underwater:{
-                type:Number
-            },
-            waterPiloting:{
-                type:Number
-            },
-            animalHandling:{
-                type:Number
-            },
-            arcana:{
-                type:Number
-            },
-            deception:{
-                type:Number
-            },
-            espionage:{
-                type:Number
-            },
-            etiquette:{
-                type:Number
-            },
-            explosives:{
-                type:Number
-            },
-            firstAid:{
-                type:Number
-            },
-            firearms:{
-                type:Number
-            },
-            electronicsKnowledge:{
-                type:Number
-            },
-            historyKnowledge:{
-                type:Number
-            },
-            intimidation:{
-                type:Number
-            },
-            intuition:{
-                type:Number
-            },
-            investigation:{
-                type:Number
-            },
-            marksman:{
-                type:Number
-            },
-            mechanic:{
-                type:Number
-            },
-            medicine:{
-                type:Number
-            },
-            naturalSciencesKnowledge:{
-                type:Number
-            },
-            persuasion:{
-                type:Number
-            },
-            religion:{
-                type:Number
-            },
-            softwareKnowledge:{
-                type:Number
-            },
-            survivalist:{
-                type:Number
-            },
-            tracking:{
-                type:Number
+            luck: {
+                type: Number
             },
         },
-        specialSkills:{
-            willpower:{
-                type:Number
+        skills: {
+            acrobatics: {
+                type: Number
             },
-            bodyStretching:{
-                type:Number
+            accuracy: {
+                type: Number
             },
-            enviromentalAwareness:{
-                type:Number
+            athletics: {
+                type: Number
             },
-            flight:{
-                type:Number
+            aerialPiloting: {
+                type: Number
             },
-            magic:{
-                type:Number
+            bikePiloting: {
+                type: Number
             },
-            chiControl:{
-                type:Number
+            heavyEquipmentPiloting: {
+                type: Number
             },
-            magnetism:{
-                type:Number
+            lockpicking: {
+                type: Number
             },
-            telepathy:{
-                type:Number
+            meleeWeapons: {
+                type: Number
             },
-            pyrokinesis:{
-                type:Number
+            motorVehiclePiloting: {
+                type: Number
             },
-            electrokinesis:{
-                type:Number
+            pickpocket: {
+                type: Number
             },
-            cryokinesis:{
-                type:Number
+            rangedWeapons: {
+                type: Number
             },
-            gravitokinesis:{
-                type:Number
+            stealth: {
+                type: Number
             },
-            hydrokinesis:{
-                type:Number
+            throw: {
+                type: Number
             },
-            aerokinesis:{
-                type:Number
+            underwater: {
+                type: Number
             },
-            seismokinesis:{
-                type:Number
+            waterPiloting: {
+                type: Number
             },
-            terrakinesis:{
-                type:Number
+            animalHandling: {
+                type: Number
             },
-            thermokinesis:{
-                type:Number
+            arcana: {
+                type: Number
             },
-            powerCosmic:{
-                type:Number
+            deception: {
+                type: Number
             },
-            spiritualAffinity:{
-                type:Number
+            espionage: {
+                type: Number
             },
-            weatherControl:{
-                type:Number
+            etiquette: {
+                type: Number
             },
-            wallCrawling:{
-                type:Number
+            explosives: {
+                type: Number
             },
-            special1:{
-                type:Number
+            firstAid: {
+                type: Number
             },
-            special2:{
-                type:Number
+            firearms: {
+                type: Number
             },
-            special3:{
-                type:Number
+            electronicsKnowledge: {
+                type: Number
             },
-            special4:{
-                type:Number
+            historyKnowledge: {
+                type: Number
+            },
+            intimidation: {
+                type: Number
+            },
+            intuition: {
+                type: Number
+            },
+            investigation: {
+                type: Number
+            },
+            marksman: {
+                type: Number
+            },
+            mechanic: {
+                type: Number
+            },
+            medicine: {
+                type: Number
+            },
+            naturalSciencesKnowledge: {
+                type: Number
+            },
+            persuasion: {
+                type: Number
+            },
+            religion: {
+                type: Number
+            },
+            softwareKnowledge: {
+                type: Number
+            },
+            survivalist: {
+                type: Number
+            },
+            tracking: {
+                type: Number
             },
         },
-        abilities:[{
-            type:String
+        specialSkills: {
+            willpower: {
+                type: Number
+            },
+            bodyStretching: {
+                type: Number
+            },
+            enviromentalAwareness: {
+                type: Number
+            },
+            flight: {
+                type: Number
+            },
+            magic: {
+                type: Number
+            },
+            chiControl: {
+                type: Number
+            },
+            magnetism: {
+                type: Number
+            },
+            telepathy: {
+                type: Number
+            },
+            pyrokinesis: {
+                type: Number
+            },
+            electrokinesis: {
+                type: Number
+            },
+            cryokinesis: {
+                type: Number
+            },
+            gravitokinesis: {
+                type: Number
+            },
+            hydrokinesis: {
+                type: Number
+            },
+            aerokinesis: {
+                type: Number
+            },
+            seismokinesis: {
+                type: Number
+            },
+            terrakinesis: {
+                type: Number
+            },
+            thermokinesis: {
+                type: Number
+            },
+            powerCosmic: {
+                type: Number
+            },
+            spiritualAffinity: {
+                type: Number
+            },
+            weatherControl: {
+                type: Number
+            },
+            wallCrawling: {
+                type: Number
+            },
+            special1: {
+                type: Number
+            },
+            special2: {
+                type: Number
+            },
+            special3: {
+                type: Number
+            },
+            special4: {
+                type: Number
+            },
+        },
+        abilities: [{
+            type: String
         }],
-        weaknesses:[{
-            type:String
+        weaknesses: [{
+            type: String
         }],
-        type:{
-            type:['hero','villain','npc'],
+        type: {
+            type: ['hero', 'villain', 'npc'],
             default: 'hero'
         },
-        powers:[{
+        powers: [{
             type: String,
         }],
-        forms:[{
+        forms: [{
             type: String,
         }],
-        
+
     },
     {
-        timestamps:true, //TODO cratedAt, updatedAt
-        versionKey:false    
+        timestamps: true, //TODO cratedAt, updatedAt
+        versionKey: false
     }
 )
 

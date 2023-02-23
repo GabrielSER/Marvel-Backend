@@ -17,7 +17,7 @@ app.use('/api', require('./routes'))
 
 app.listen(PORT, () => {
     console.log(fs.readFileSync('./assets/banner.txt').toString('utf-8'))
-    console.log(`tu app está lista por http://localhost:${PORT}`)
+    console.log(`\nRunning app on: http://localhost:${PORT}`)
 })
 
 dbConnect()
