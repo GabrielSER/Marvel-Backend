@@ -1,24 +1,23 @@
 require('dotenv').config()
+var fs = require('fs')
 const express = require('express')
 const cors = require('cors')
-const dbConnect = require ('./config/mongo')
 const app = express()
+const dbConnect = require('./config/mongo')
 
 app.use(cors())
 app.use(express.json())
 
-const port = process.env.PORT
+const {
+    PORT
+} = process.env
 
-/**
- * Aqui invocamos la rutas
- */
-
-//TODO localhost/api/_______
-app.use('/api',require('./routes'))
+app.use('/api', require('./routes'))
 
 
-app.listen(port,()=>{
-    console.log(`tu app está lista por http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(fs.readFileSync('./assets/banner.txt').toString('utf-8'))
+    console.log(`tu app está lista por http://localhost:${PORT}`)
 })
 
 dbConnect()
