@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { handleError } = require('../utils/apiError')
+const { handleError } = require('../common/apiError')
 const {
     getForms,
     getForm,

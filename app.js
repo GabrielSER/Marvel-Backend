@@ -12,12 +12,12 @@ const {
     PORT
 } = process.env
 
-app.use('/api', require('./routes'))
-
-
 app.listen(PORT, () => {
     console.log(fs.readFileSync('./assets/banner.txt').toString('utf-8'))
     console.log(`\nRunning app on: http://localhost:${PORT}`)
+    dbConnect(() => {
+        app.use('/api', require('./routes'))
+        console.log('\nServer started')
+    })
 })
 
-dbConnect()

@@ -1,12 +1,29 @@
 const mongoose = require('mongoose')
 
+const USER_TYPE = {
+    ADMIN: {
+        name: 'admin'
+    },
+    PLAYER: {
+        name: 'player'
+    }
+}
+
+const userTypeNames = Object.keys(USER_TYPE).map(userType => USER_TYPE[userType].name)
+
 const UserScheme = new mongoose.Schema(
     {
         name: {
             type: String
         },
-        age: {
-            type: Number
+        username: {
+            type: String
+        },
+        photo: {
+            type: String
+        },
+        bithdate: {
+            type: String
         },
         email: {
             type: String,
@@ -15,9 +32,9 @@ const UserScheme = new mongoose.Schema(
         password: {
             type: String
         },
-        role: {
-            type: ['player', 'master', 'admin'],
-            default: 'player'
+        roles: {
+            type: userTypeNames,
+            default: [USER_TYPE.PLAYER.name]
         }
     },
     {
@@ -26,4 +43,9 @@ const UserScheme = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('users', UserScheme)
+const usersModel = mongoose.model('users', UserScheme)
+
+module.exports = {
+    usersModel,
+    USER_TYPE
+}

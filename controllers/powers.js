@@ -1,5 +1,5 @@
 const { powersModel } = require('../models')
-const { ErrorCode, handleHttpError } = require('../utils/apiError')
+const { ApiError, ErrorCode } = require('../common/apiError')
 const { matchedData } = require('express-validator')
 
 /**
@@ -15,8 +15,6 @@ const getPower = async (id) =>{
   return await powersModel.findById(id)
 
 }
- 
-  
 
 /** 
  * Insertar un registro

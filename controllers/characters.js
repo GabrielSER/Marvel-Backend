@@ -1,5 +1,5 @@
 const { charactersModel } = require('../models')
-const { ErrorCode, handleHttpError } = require('../utils/apiError')
+const { ErrorCode } = require('../common/apiError')
 const { matchedData } = require('express-validator')
 
 /**

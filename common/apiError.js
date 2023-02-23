@@ -80,8 +80,8 @@ class ApiError extends Error {
 
 }
 
-const handleError = (targetFunction) => {
-    return async (req, res, _) => {
+const handleError = (targetFunction) =>
+    async (req, res) => {
         await catchErrors(res, async () => {
             const response = await targetFunction(req, res)
             if (response) {
@@ -92,7 +92,6 @@ const handleError = (targetFunction) => {
             }
         })
     }
-}
 
 const catchErrors = async (res, targetFunction) => {
     try {
