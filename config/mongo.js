@@ -8,7 +8,7 @@ const mongoOptions = {
     useUnifiedTopology: true
 }
 
-const dbConnect = (callback) => {
+const connectToDatabase = (callback) => {
 
     mongoose.connect(DB_URI, mongoOptions, (error) => {
         if (!error) {
@@ -21,4 +21,4 @@ const dbConnect = (callback) => {
 
 }
 
-module.exports = dbConnect
+module.exports = { connectToDatabase }

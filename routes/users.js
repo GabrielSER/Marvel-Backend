@@ -12,9 +12,9 @@ const {
     deleteUser
 } = require('../controllers/users')
 
-router.get('/', handleError(getUsers))
+router.get('/', adminMiddleware, handleError(getUsers))
 
-router.get('/:id', authMiddleware, handleError(req =>
+router.get('/:id', handleUserAccess(req =>
     getUser(req.params.id)
 ))
 
@@ -30,7 +30,7 @@ router.put('/:id', handleUserAccess(req =>
     updateUser(req.params.id, req.body)
 ))
 
-router.delete('/:id', adminMiddleware, handleError(req =>
+router.delete('/:id', handleUserAccess(req =>
     deleteUser(req.params.id)
 ))
 

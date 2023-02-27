@@ -19,8 +19,8 @@ const getPower = async (id) =>{
 /** 
  * Insertar un registro
  */
-const createPower = async (Power) =>
-  await powersModel.create(Power)
+const createPower = async (power) =>
+  await powersModel.create(power)
 
 /**
  * Actualizar un registro

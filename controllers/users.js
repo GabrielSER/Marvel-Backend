@@ -4,22 +4,51 @@ const { ErrorCode, ApiError } = require('../common/apiError')
 const { hashPassword, validatePassword } = require('../common/bcryptUtil')
 const { generateToken } = require('../common/jwtUtil')
 
-const getUsers = async () => {
-  const users =  await usersModel.find({})
-  return users.map(userView)
+const userProjection = { password: 0 }
+
+const upsertUser = async (id, changes) => {
+  if (changes.password) {
+    changes.password = await hashPassword(changes.password)
+  }
+
+  const {
+    name,
+    photo,
+    bithdate,
+    email,
+    password
+  } = changes
+
+  const changesToUpdate = {}
+  if (name) changesToUpdate.name = name
+  if (photo) changesToUpdate.photo = photo
+  if (bithdate) changesToUpdate.bithdate = bithdate
+  if (email) changesToUpdate.email = email
+  if (password) changesToUpdate.password = password
+
+  if (id === undefined) {
+    const createdUser = await usersModel.create(changesToUpdate)
+    return await getUser(createdUser._id)
+  }
+  
+  return await usersModel.findByIdAndUpdate(
+    id,
+    changesToUpdate,
+    {
+      new: true,
+      projection: userProjection
+    }
+  )
 }
+
+const getUsers = async () =>
+  await usersModel.find({}, userProjection)
 
 const getUser = async (id) =>
-  userView(await usersModel.findById(id))
+  await usersModel.findById(id, userProjection)
 
-const registerUser = async (user) => {
-  const hashedPassword = await hashPassword(user.password)
-  user = {
-    ...user,
-    password: hashedPassword
-  }
-  return userView(await usersModel.create(user))
-}
+const registerUser = async (user) =>
+  await upsertUser(undefined, user)
 
 const generateUserToken = async (userDetails) => {
   const { email, password } = userDetails
@@ -49,32 +78,19 @@ const generateUserToken = async (userDetails) => {
 }
 
 const updateUser = async (id, changes) => {
-  if (changes.password) {
-    changes.password = await hashPassword(changes.password)
-  }
-  delete changes._id
-  delete changes.roles
-  delete changes.username
-  delete changes.email
-  delete changes.createdAt
-  delete changes.updatedAt
-  const result = await usersModel.findByIdAndUpdate(id, changes, { new: true })
+  const result = await upsertUser(id, changes)
   if (!result) {
     throw new ApiError(ErrorCode.NOT_FOUND)
   }
-  return userView(result)
+  return result
 }
 
 const deleteUser = async (id) => {
-  const result = await usersModel.findByIdAndDelete(id)
+  const result = await usersModel.findByIdAndDelete(id, { projection: userProjection })
   if (!result) {
     throw new ApiError(ErrorCode.NOT_FOUND)
   }
-  return userView(result)
-}
-
-const userView = (user) => {
-  return user
+  return result
 }
 
 module.exports = {

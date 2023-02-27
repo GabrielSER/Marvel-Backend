@@ -1,5 +1,5 @@
-const express = require('express')
-const router = express.Router()
+const {Router} = require('express')
+const router = Router()
 const { handleError } = require('../common/apiError')
 const {
     getPowers,
@@ -7,7 +7,7 @@ const {
     createPower,
     updatePower,
     deletePower
-} = require('../controllers/Powers')
+} = require('../controllers/powers')
 
 
 router.get('/', handleError(getPowers))

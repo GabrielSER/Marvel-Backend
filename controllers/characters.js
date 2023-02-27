@@ -37,7 +37,6 @@ const updateCharacter = async (id, changes) => {
  */
 const deleteCharacter = async (id) => {
   const result = await charactersModel.findByIdAndDelete(id)
-  // console.log(result)
   if (!result) {
     throw ApiError(ErrorCode.NOT_FOUND)
   }

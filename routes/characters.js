@@ -1,5 +1,5 @@
-const express = require('express')
-const router = express.Router()
+const { Router } = require('express')
+const router = Router()
 const { handleError } = require('../common/apiError')
 const {
     getCharacters,
@@ -8,7 +8,6 @@ const {
     updateCharacter,
     deleteCharacter
 } = require('../controllers/characters')
-
 
 router.get('/', handleError(getCharacters))
 

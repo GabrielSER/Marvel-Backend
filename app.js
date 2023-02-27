@@ -3,7 +3,7 @@ var fs = require('fs')
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const dbConnect = require('./config/mongo')
+const { connectToDatabase } = require('./config/mongo')
 
 app.use(cors())
 app.use(express.json())
@@ -15,7 +15,7 @@ const {
 app.listen(PORT, () => {
     console.log(fs.readFileSync('./assets/banner.txt').toString('utf-8'))
     console.log(`\nRunning app on: http://localhost:${PORT}`)
-    dbConnect(() => {
+    connectToDatabase(() => {
         app.use('/api', require('./routes'))
         console.log('\nServer started')
     })

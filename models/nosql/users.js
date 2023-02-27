@@ -17,7 +17,9 @@ const UserScheme = new mongoose.Schema(
             type: String
         },
         username: {
-            type: String
+            type: String,
+            index: true,
+            unique: true
         },
         photo: {
             type: String
@@ -27,6 +29,7 @@ const UserScheme = new mongoose.Schema(
         },
         email: {
             type: String,
+            index: true,
             unique: true
         },
         password: {
