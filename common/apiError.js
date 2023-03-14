@@ -84,7 +84,7 @@ const handleError = (targetFunction) =>
     async (req, res) => {
         await catchErrors(res, async () => {
             const response = await targetFunction(req, res)
-            if (response) {
+            if (response !== undefined) {
                 res.json(response)
             }
             else {

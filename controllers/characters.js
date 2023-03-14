@@ -1,6 +1,18 @@
 const { charactersModel } = require('../models')
 const { ErrorCode } = require('../common/apiError')
-const { matchedData } = require('express-validator')
+const characters = require('../assets/characters.json')
+
+const batchInsert = async (charactersToCreate) => {
+  const charactersArray = charactersToCreate ?? characters
+  for (let index = 0; index < characters.length; index++) {
+    const characterFromFile = characters[index]
+    const character = {
+      ...characterFromFile
+    }
+    const created = await createCharacter(character)
+    console.log(`Created character ${created._id}: ${created.name}...`)
+  }
+}
 
 /**
  * Obtener lista de la base de datos
@@ -11,8 +23,13 @@ const getCharacters = async () =>
 /**
  * Obtener un detalle
  */
-const getCharacter = async (id) =>
-  await charactersModel.findById(id)
+const getCharacter = async (id) => {
+  const result = await charactersModel.findById(id)
+  if (!result) {
+    throw ApiError(ErrorCode.NOT_FOUND)
+  }
+  return result
+}
 
 /** 
  * Insertar un registro
@@ -45,6 +62,7 @@ const deleteCharacter = async (id) => {
 }
 
 module.exports = {
+  batchInsert,
   getCharacters,
   getCharacter,
   createCharacter,

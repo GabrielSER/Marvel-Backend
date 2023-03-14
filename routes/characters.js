@@ -1,7 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const { handleError } = require('../common/apiError')
+const { adminMiddleware } = require('../common/authMiddleware')
+
 const {
+    batchInsert,
     getCharacters,
     getCharacter,
     createCharacter,
@@ -9,6 +12,8 @@ const {
     deleteCharacter
 } = require('../controllers/characters')
 
+
+router.post('/admin', adminMiddleware, handleError(req => batchInsert(req.body)))
 
 router.get('/', handleError(getCharacters))
 

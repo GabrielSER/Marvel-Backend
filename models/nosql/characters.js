@@ -270,7 +270,7 @@ const CharacterScheme = new Schema(
         weaknesses: [{
             type: String
         }],
-        type: {
+        types: {
             type: ['hero', 'villain', 'npc'],
             default: 'hero'
         },
@@ -280,7 +280,9 @@ const CharacterScheme = new Schema(
         forms: [{
             type: String,
         }],
-
+        order: {
+            type: Number
+        }
     },
     {
         timestamps: true, //TODO cratedAt, updatedAt
