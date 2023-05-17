@@ -1,11 +1,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const { ObjectId } = mongoose.Types
 
 const PowerScheme = new Schema(
     {
-        name: {
-            type: String
-        },
+        _id: ObjectId,
         level: {
             type: Number
         },

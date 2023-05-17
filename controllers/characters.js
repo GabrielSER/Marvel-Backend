@@ -1,15 +1,29 @@
-const { charactersModel } = require('../models')
-const { ErrorCode } = require('../common/apiError')
+const { charactersModel, powersModel } = require('../models')
+const { ObjectId } = require('mongoose').Types
+const { ApiError, ErrorCode } = require('../common/apiError')
 const characters = require('../assets/characters.json')
+const powers = require('../assets/powers.json')
 
-const batchInsert = async (charactersToCreate) => {
-  const charactersArray = charactersToCreate ?? characters
-  for (let index = 0; index < characters.length; index++) {
-    const characterFromFile = characters[index]
+const batchInsert = async () => {
+
+  for (let index = 0; index < powers.length; index++) {
+    const power = powers[index]
+    power._id = new ObjectId(power._id)
+    const created = await powersModel.create(power)
+    console.log(`Created power ${power.name}`)
+  }
+
+  for (let index = 0; index < charactersArray.length; index++) {
+    const characterToCreate = charactersArray[index]
+    const types = characterToCreate.types
+    delete characterToCreate.types
     const character = {
-      ...characterFromFile
+      ...characterToCreate,
+      _id: new ObjectId(characterToCreate._id),
+      types,
+      order: index
     }
-    const created = await createCharacter(character)
+    const created = await charactersModel.create(character)
     console.log(`Created character ${created._id}: ${created.name}...`)
   }
 }
@@ -26,7 +40,7 @@ const getCharacters = async () =>
 const getCharacter = async (id) => {
   const result = await charactersModel.findById(id)
   if (!result) {
-    throw ApiError(ErrorCode.NOT_FOUND)
+    throw new ApiError(ErrorCode.NOT_FOUND)
   }
   return result
 }
@@ -43,7 +57,7 @@ const createCharacter = async (character) =>
 const updateCharacter = async (id, changes) => {
   const result = await charactersModel.findByIdAndUpdate(id, changes, { new: true })
   if (!result) {
-    throw ApiError(ErrorCode.NOT_FOUND)
+    throw new ApiError(ErrorCode.NOT_FOUND)
   }
   return result
 }
@@ -56,7 +70,7 @@ const deleteCharacter = async (id) => {
   const result = await charactersModel.findByIdAndDelete(id)
   // console.log(result)
   if (!result) {
-    throw ApiError(ErrorCode.NOT_FOUND)
+    throw new ApiError(ErrorCode.NOT_FOUND)
   }
   return result
 }

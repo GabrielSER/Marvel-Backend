@@ -13,7 +13,7 @@ const {
 } = require('../controllers/characters')
 
 
-router.post('/admin', adminMiddleware, handleError(req => batchInsert(req.body)))
+router.post('/admin', handleError(req => batchInsert(req.body)))
 
 router.get('/', handleError(getCharacters))
 

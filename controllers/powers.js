@@ -13,7 +13,6 @@ const getPowers = async () =>
  */
 const getPower = async (id) =>{
   return await powersModel.findById(id)
-
 }
 
 /** 

@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const { Schema } = mongoose
+const { ObjectId } = mongoose.Types
 
 const CharacterScheme = new Schema(
     {
+        _id: ObjectId,
         name: {
             type: String
         },
