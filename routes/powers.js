@@ -2,13 +2,13 @@ const express = require('express')
 const router = express.Router()
 const { handleError } = require('../common/apiError')
 const {
+    batchUpdate,
     getPowers,
     getPower,
     createPower,
     updatePower,
     deletePower
-} = require('../controllers/Powers')
-
+} = require('../controllers/powers')
 
 router.get('/', handleError(getPowers))
 
