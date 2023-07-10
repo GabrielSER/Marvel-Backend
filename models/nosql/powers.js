@@ -5,6 +5,9 @@ const { ObjectId } = mongoose.Types
 const PowerScheme = new Schema(
     {
         _id: ObjectId,
+        name: {
+            type: String,
+        },
         level: {
             type: Number
         },
