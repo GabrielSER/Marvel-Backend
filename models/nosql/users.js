@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const USER_TYPE = {
+const UserType = {
     ADMIN: {
         name: 'admin'
     },
@@ -9,7 +9,7 @@ const USER_TYPE = {
     }
 }
 
-const userTypeNames = Object.keys(USER_TYPE).map(userType => USER_TYPE[userType].name)
+const userTypeNames = Object.keys(UserType).map(userType => UserType[userType].name)
 
 const UserScheme = new mongoose.Schema(
     {
@@ -34,7 +34,7 @@ const UserScheme = new mongoose.Schema(
         },
         roles: {
             type: userTypeNames,
-            default: [USER_TYPE.PLAYER.name]
+            default: [UserType.PLAYER.name]
         }
     },
     {
@@ -43,9 +43,7 @@ const UserScheme = new mongoose.Schema(
     }
 )
 
-const usersModel = mongoose.model('users', UserScheme)
-
 module.exports = {
-    usersModel,
-    USER_TYPE
+    usersModel: mongoose.model('users', UserScheme),
+    UserType
 }

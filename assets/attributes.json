@@ -1,0 +1,527 @@
+[
+    {
+        "uniqueName": "strength",
+        "name": "strength",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "intelligence",
+        "name": "intelligence",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "durability",
+        "name": "durability",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "agility",
+        "name": "agility",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "wisdom",
+        "name": "wisdom",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "charisma",
+        "name": "charisma",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "perception",
+        "name": "perception",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "hp",
+        "name": "hp",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "power",
+        "name": "power",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "defense",
+        "name": "defense",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "melee",
+        "name": "melee",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "energyprojection",
+        "name": "energyprojection",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "speed",
+        "name": "speed",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "luck",
+        "name": "luck",
+        "type": "stat",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "acrobatics",
+        "name": "acrobatics",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "accuracy",
+        "name": "accuracy",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "athletics",
+        "name": "athletics",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "aerialPiloting",
+        "name": "aerialPiloting",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "bikePiloting",
+        "name": "bikePiloting",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "heavyEquipmentPiloting",
+        "name": "heavyEquipmentPiloting",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "lockpicking",
+        "name": "lockpicking",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "meleeWeapons",
+        "name": "meleeWeapons",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "motorVehiclePiloting",
+        "name": "motorVehiclePiloting",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "pickpocket",
+        "name": "pickpocket",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "rangedWeapons",
+        "name": "rangedWeapons",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "stealth",
+        "name": "stealth",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "throw",
+        "name": "throw",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "underwater",
+        "name": "underwater",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "waterPiloting",
+        "name": "waterPiloting",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "animalHandling",
+        "name": "animalHandling",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "arcana",
+        "name": "arcana",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "deception",
+        "name": "deception",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "espionage",
+        "name": "espionage",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "etiquette",
+        "name": "etiquette",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "explosives",
+        "name": "explosives",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "firstAid",
+        "name": "firstAid",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "firearms",
+        "name": "firearms",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "electronicsKnowledge",
+        "name": "electronicsKnowledge",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "historyKnowledge",
+        "name": "historyKnowledge",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "intimidation",
+        "name": "intimidation",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "intuition",
+        "name": "intuition",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "investigation",
+        "name": "investigation",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "marksman",
+        "name": "marksman",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "mechanic",
+        "name": "mechanic",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "medicine",
+        "name": "medicine",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "naturalSciencesKnowledge",
+        "name": "naturalSciencesKnowledge",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "persuasion",
+        "name": "persuasion",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "religion",
+        "name": "religion",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "softwareKnowledge",
+        "name": "softwareKnowledge",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "survivalist",
+        "name": "survivalist",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "tracking",
+        "name": "tracking",
+        "type": "skill",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "willpower",
+        "name": "willpower",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "bodyStretching",
+        "name": "bodyStretching",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "enviromentalAwareness",
+        "name": "enviromentalAwareness",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "flight",
+        "name": "flight",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "magic",
+        "name": "magic",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "chiControl",
+        "name": "chiControl",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "magnetism",
+        "name": "magnetism",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "telepathy",
+        "name": "telepathy",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "pyrokinesis",
+        "name": "pyrokinesis",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "electrokinesis",
+        "name": "electrokinesis",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "cryokinesis",
+        "name": "cryokinesis",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "gravitokinesis",
+        "name": "gravitokinesis",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "hydrokinesis",
+        "name": "hydrokinesis",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "aerokinesis",
+        "name": "aerokinesis",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "seismokinesis",
+        "name": "seismokinesis",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "terrakinesis",
+        "name": "terrakinesis",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "thermokinesis",
+        "name": "thermokinesis",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "powerCosmic",
+        "name": "powerCosmic",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "spiritualAffinity",
+        "name": "spiritualAffinity",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "weatherControl",
+        "name": "weatherControl",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "wallCrawling",
+        "name": "wallCrawling",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "radiation",
+        "name": "radiation",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "phasing",
+        "name": "phasing",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    },
+    {
+        "uniqueName": "chlorokinesis",
+        "name": "chlorokinesis",
+        "type": "special",
+        "levelable": false,
+        "learnable": false
+    }
+]

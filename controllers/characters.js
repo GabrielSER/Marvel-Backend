@@ -1,9 +1,7 @@
 const { charactersModel, powersModel } = require('../models')
 const { ObjectId } = require('mongoose').Types
 const { ApiError, ErrorCode } = require('../common/apiError')
-const characters = require('../assets/characters.json')
-const powers = require('../assets/powers.json')
-
+/*
 const batchInsert = async () => {
 
   for (let index = 0; index < powers.length; index++) {
@@ -26,7 +24,7 @@ const batchInsert = async () => {
     const created = await charactersModel.create(character)
     console.log(`Created character ${created._id}: ${created.name}...`)
   }
-}
+}*/
 
 /**
  * Obtener lista de la base de datos
@@ -76,7 +74,6 @@ const deleteCharacter = async (id) => {
 }
 
 module.exports = {
-  batchInsert,
   getCharacters,
   getCharacter,
   createCharacter,

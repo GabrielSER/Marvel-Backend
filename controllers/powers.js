@@ -36,7 +36,6 @@ const updatePower = async (id, changes) => {
  */
 const deletePower = async (id) => {
   const result = await powersModel.findByIdAndDelete(id)
-  // console.log(result)
   if (!result) {
     throw ApiError(ErrorCode.NOT_FOUND)
   }

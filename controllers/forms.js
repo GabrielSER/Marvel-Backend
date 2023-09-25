@@ -1,6 +1,5 @@
 const { formsModel } = require('../models')
 const { ApiError, ErrorCode } = require('../common/apiError')
-const { matchedData } = require('express-validator')
 
 /**
  * Obtener lista de la base de datos
@@ -33,11 +32,43 @@ const updateForm = async (id, changes) => {
 
 
 /**
+ * Actualizar un registro
+ */
+const addAttribute = async (attribute) => {
+  const { 
+    uniqueName,
+    name,
+    value = 1,
+    type = AttributeType.SKILL
+  } = attribute
+  if(!uniqueName)
+  {
+    throw ApiError(ErrorCode.NOT_FOUND)
+  }
+  if(!name)
+  {
+    throw ApiError(ErrorCode.NOT_FOUND)
+  }
+  const currentAttribute = await attributeModel.find({ uniqueName })
+  if (!currentAttribute) {
+    attributeModel.create({
+      uniqueName,
+      name,
+      type,
+      levelable: false,
+      learnable: false
+
+    })
+  }
+  return result
+}
+
+
+/**
  * Eliminar un registro
  */
 const deleteForm = async (id) => {
   const result = await formsModel.findByIdAndDelete(id)
-  // console.log(result)
   if (!result) {
     throw ApiError(ErrorCode.NOT_FOUND)
   }
