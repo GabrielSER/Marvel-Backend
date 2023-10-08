@@ -24,7 +24,7 @@ const FormScheme = new Schema(
         powers: [{
             type: String
         }],
-        type: {
+        types: {
             type: ['normal', 'alternate', 'armor'],
             default: 'hero'
         },
