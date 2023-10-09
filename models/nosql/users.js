@@ -1,18 +1,20 @@
 const mongoose = require('mongoose')
+const { ObjectId } = mongoose.Types
 
 const UserType = {
     ADMIN: {
-        name: 'admin'
+        value: 'admin'
     },
     PLAYER: {
-        name: 'player'
+        value: 'player'
     }
 }
 
-const userTypeNames = Object.keys(UserType).map(userType => UserType[userType].name)
+const typeValues = Object.values(UserType).map(type => type.value)
 
 const UserScheme = new mongoose.Schema(
     {
+        _id: ObjectId,
         name: {
             type: String
         },
@@ -32,13 +34,14 @@ const UserScheme = new mongoose.Schema(
         password: {
             type: String
         },
-        roles: {
-            type: userTypeNames,
-            default: [UserType.PLAYER.name]
-        }
+        roles: [{
+            type: String,
+            enum: typeValues,
+            default: UserType.PLAYER.value
+        }]
     },
     {
-        timestamps: true, //TODO cratedAt, updatedAt
+        timestamps: true,
         versionKey: false
     }
 )

@@ -1,20 +1,34 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const { ObjectId } = mongoose.Types
+const { AttributesStackScheme } = require('./attributeStacks')
+
+const FormType = {
+    NORMAL: {
+        value: 'normal'
+    },
+    ALTERNATE: {
+        value: 'alternate'
+    },
+    ARMOR: {
+        value: 'armor'
+    }
+}
+
+const typeValues = Object.values(FormType).map(type => type.value)
 
 const FormScheme = new Schema(
     {
+        _id: ObjectId,
         name: {
             type: String
         },
         image: {
             type: String
         },
-        inheritedAttributes: [{
-            type: String
-        }],
-        attributes: [{
-            type: String
-        }],
+        attributeStack: {
+            type: AttributesStackScheme
+        },
         abilities: [{
             type: String
         }],
@@ -24,10 +38,11 @@ const FormScheme = new Schema(
         powers: [{
             type: String
         }],
-        types: {
-            type: ['normal', 'alternate', 'armor'],
-            default: 'hero'
-        },
+        types: [{
+            type: String,
+            enum: typeValues,
+            default: FormType.NORMAL.value
+        }],
         character: {
             type: String
         }
@@ -38,4 +53,9 @@ const FormScheme = new Schema(
     }
 )
 
-module.exports = mongoose.model('forms', FormScheme)
+const formsModel = mongoose.model('forms', FormScheme)
+
+module.exports = {
+    formsModel,
+    FormType
+}

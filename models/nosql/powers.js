@@ -47,10 +47,11 @@ const PowerScheme = new Schema(
         form: {
             type: String
         }
-    },
-    {
-
     }
 )
 
-module.exports = mongoose.model('powers', PowerScheme)
+const powersModel = mongoose.model('powers', PowerScheme)
+
+module.exports = {
+    powersModel
+}

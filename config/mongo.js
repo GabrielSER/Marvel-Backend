@@ -8,17 +8,7 @@ const mongoOptions = {
     useUnifiedTopology: true
 }
 
-const dbConnect = (callback) => {
-
-    mongoose.connect(DB_URI, mongoOptions, (error) => {
-        if (!error) {
-            console.log('Database connected!')
-            callback()
-        } else {
-            console.error('Database connection error', error)
-        }
-    })
-
-}
+const dbConnect = async () =>
+    mongoose.connect(DB_URI, mongoOptions)
 
 module.exports = dbConnect

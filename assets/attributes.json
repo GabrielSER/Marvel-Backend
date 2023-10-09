@@ -1,526 +1,751 @@
 [
     {
+        "_id": "64f8fd0e8f404e11057253f4",
         "uniqueName": "strength",
         "name": "strength",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253f5",
         "uniqueName": "intelligence",
         "name": "intelligence",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253f6",
         "uniqueName": "durability",
         "name": "durability",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253f7",
         "uniqueName": "agility",
         "name": "agility",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253f8",
         "uniqueName": "wisdom",
         "name": "wisdom",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253f9",
         "uniqueName": "charisma",
         "name": "charisma",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253fa",
         "uniqueName": "perception",
         "name": "perception",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253fb",
         "uniqueName": "hp",
         "name": "hp",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253fc",
         "uniqueName": "power",
         "name": "power",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253fd",
         "uniqueName": "defense",
         "name": "defense",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253fe",
         "uniqueName": "melee",
         "name": "melee",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e11057253ff",
         "uniqueName": "energyprojection",
         "name": "energyprojection",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725400",
         "uniqueName": "speed",
         "name": "speed",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725401",
         "uniqueName": "luck",
         "name": "luck",
-        "type": "stat",
+        "type": [
+            "stat"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725402",
         "uniqueName": "acrobatics",
         "name": "acrobatics",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725403",
         "uniqueName": "accuracy",
         "name": "accuracy",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725404",
         "uniqueName": "athletics",
         "name": "athletics",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725405",
         "uniqueName": "aerialPiloting",
         "name": "aerialPiloting",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725406",
         "uniqueName": "bikePiloting",
         "name": "bikePiloting",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725407",
         "uniqueName": "heavyEquipmentPiloting",
         "name": "heavyEquipmentPiloting",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725408",
         "uniqueName": "lockpicking",
         "name": "lockpicking",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725409",
         "uniqueName": "meleeWeapons",
         "name": "meleeWeapons",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572540a",
         "uniqueName": "motorVehiclePiloting",
         "name": "motorVehiclePiloting",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572540b",
         "uniqueName": "pickpocket",
         "name": "pickpocket",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572540c",
         "uniqueName": "rangedWeapons",
         "name": "rangedWeapons",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572540d",
         "uniqueName": "stealth",
         "name": "stealth",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572540e",
         "uniqueName": "throw",
         "name": "throw",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572540f",
         "uniqueName": "underwater",
         "name": "underwater",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725410",
         "uniqueName": "waterPiloting",
         "name": "waterPiloting",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725411",
         "uniqueName": "animalHandling",
         "name": "animalHandling",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725412",
         "uniqueName": "arcana",
         "name": "arcana",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725413",
         "uniqueName": "deception",
         "name": "deception",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725414",
         "uniqueName": "espionage",
         "name": "espionage",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725415",
         "uniqueName": "etiquette",
         "name": "etiquette",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725416",
         "uniqueName": "explosives",
         "name": "explosives",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725417",
         "uniqueName": "firstAid",
         "name": "firstAid",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725418",
         "uniqueName": "firearms",
         "name": "firearms",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725419",
         "uniqueName": "electronicsKnowledge",
         "name": "electronicsKnowledge",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572541a",
         "uniqueName": "historyKnowledge",
         "name": "historyKnowledge",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572541b",
         "uniqueName": "intimidation",
         "name": "intimidation",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572541c",
         "uniqueName": "intuition",
         "name": "intuition",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572541d",
         "uniqueName": "investigation",
         "name": "investigation",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572541e",
         "uniqueName": "marksman",
         "name": "marksman",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572541f",
         "uniqueName": "mechanic",
         "name": "mechanic",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725420",
         "uniqueName": "medicine",
         "name": "medicine",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725421",
         "uniqueName": "naturalSciencesKnowledge",
         "name": "naturalSciencesKnowledge",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725422",
         "uniqueName": "persuasion",
         "name": "persuasion",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725423",
         "uniqueName": "religion",
         "name": "religion",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725424",
         "uniqueName": "softwareKnowledge",
         "name": "softwareKnowledge",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725425",
         "uniqueName": "survivalist",
         "name": "survivalist",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725426",
         "uniqueName": "tracking",
         "name": "tracking",
-        "type": "skill",
+        "type": [
+            "skill"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725427",
         "uniqueName": "willpower",
         "name": "willpower",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725428",
         "uniqueName": "bodyStretching",
         "name": "bodyStretching",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725429",
         "uniqueName": "enviromentalAwareness",
         "name": "enviromentalAwareness",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572542a",
         "uniqueName": "flight",
         "name": "flight",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572542b",
         "uniqueName": "magic",
         "name": "magic",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572542c",
         "uniqueName": "chiControl",
         "name": "chiControl",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572542d",
         "uniqueName": "magnetism",
         "name": "magnetism",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572542e",
         "uniqueName": "telepathy",
         "name": "telepathy",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572542f",
         "uniqueName": "pyrokinesis",
         "name": "pyrokinesis",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725430",
         "uniqueName": "electrokinesis",
         "name": "electrokinesis",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725431",
         "uniqueName": "cryokinesis",
         "name": "cryokinesis",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725432",
         "uniqueName": "gravitokinesis",
         "name": "gravitokinesis",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725433",
         "uniqueName": "hydrokinesis",
         "name": "hydrokinesis",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725434",
         "uniqueName": "aerokinesis",
         "name": "aerokinesis",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725435",
         "uniqueName": "seismokinesis",
         "name": "seismokinesis",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725436",
         "uniqueName": "terrakinesis",
         "name": "terrakinesis",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725437",
         "uniqueName": "thermokinesis",
         "name": "thermokinesis",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725438",
         "uniqueName": "powerCosmic",
         "name": "powerCosmic",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e1105725439",
         "uniqueName": "spiritualAffinity",
         "name": "spiritualAffinity",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572543a",
         "uniqueName": "weatherControl",
         "name": "weatherControl",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572543b",
         "uniqueName": "wallCrawling",
         "name": "wallCrawling",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572543c",
         "uniqueName": "radiation",
         "name": "radiation",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572543d",
         "uniqueName": "phasing",
         "name": "phasing",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     },
     {
+        "_id": "64f8fd0e8f404e110572543e",
         "uniqueName": "chlorokinesis",
         "name": "chlorokinesis",
-        "type": "special",
+        "type": [
+            "special"
+        ],
         "levelable": false,
         "learnable": false
     }

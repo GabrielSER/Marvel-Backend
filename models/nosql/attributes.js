@@ -14,7 +14,7 @@ const AttributeType = {
     }
 }
 
-const typeValues = Object.entries(AttributeType).map((_, value) => {value})
+const typeValues = Object.values(AttributeType).map(type => type.value)
 
 const AttributeScheme = new Schema(
     {
@@ -26,8 +26,9 @@ const AttributeScheme = new Schema(
             type: String
         },
         type: {
-            type: typeValues,
-            default: AttributeType.SKILL
+            type: String,
+            enum: typeValues,
+            default: AttributeType.SKILL.value
         },
         levelable: {
             type: Boolean

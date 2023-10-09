@@ -2,6 +2,20 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose
 const { ObjectId } = mongoose.Types
 
+const CharacterType = {
+    HERO: {
+        value: 'hero'
+    },
+    VILLIAN: {
+        value: 'villian'
+    },
+    NPC: {
+        value: 'npc'
+    }
+}
+
+const typeValues = Object.values(CharacterType).map(type => type.value)
+
 const CharacterScheme = new Schema(
     {
         _id: ObjectId,
@@ -17,10 +31,11 @@ const CharacterScheme = new Schema(
         logo: {
             type: String
         },
-        types: {
-            type: ['hero', 'villain', 'npc'],
-            default: 'hero'
-        },
+        types: [{
+            type: String,
+            enum: typeValues,
+            default: CharacterType.HERO.value
+        }],
         defaultForm: {
             type: String,
         },
@@ -37,4 +52,9 @@ const CharacterScheme = new Schema(
     }
 )
 
-module.exports = mongoose.model('characters', CharacterScheme)
+const charactersModel = mongoose.model('characters', CharacterScheme)
+
+module.exports = {
+    charactersModel,
+    CharacterType
+}
