@@ -12,12 +12,23 @@ const {
     PORT
 } = process.env
 
-app.listen(PORT, () => {
+const attributeController = require('./controllers/attributes')
+// form.set('specialSkills', undefined, {strict: false} )
+
+app.listen(PORT, async () => {
     console.log(fs.readFileSync('./assets/banner.txt').toString('utf-8'))
     console.log(`\nRunning app on: http://localhost:${PORT}`)
-    dbConnect(() => {
-        app.use('/api', require('./routes'))
-        console.log('\nServer started')
-    })
+    try {
+        await dbConnect()
+        console.log('Database connected!')
+    } catch (error) {
+        console.error('Database connection error', error)
+    }
+
+    app.use('/api', require('./routes'))
+    
+    console.log('\nServer started!\n')
+    
+    await attributeController.bootstrap()
 })
 

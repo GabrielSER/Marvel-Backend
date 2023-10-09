@@ -38,6 +38,7 @@ const generateUserToken = async (userDetails) => {
   if (!validPassword) {
     throw new ApiError(ErrorCode.FORBIDDEN, 'Invalid username or password')
   }
+  
   // Generate JWT
   const tokenBody = {
     id: user._id,

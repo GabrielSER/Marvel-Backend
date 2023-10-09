@@ -1,5 +1,5 @@
 const { usersModel } = require('../models')
-const { USER_TYPE } = require('../models/nosql/users')
+const { UserType } = require('../models/nosql/users')
 const { handleError, ErrorCode, ApiError } = require('./apiError')
 const { authMiddleware } = require('./authMiddleware')
 
@@ -9,7 +9,7 @@ const handleUserAccess = (targetFunction) =>
             handleError(async () => {
                 const tokenBody = req.tokenBody
                 const isSameUser = req.params.id === tokenBody.id
-                const isAdmin = tokenBody.roles.includes(USER_TYPE.ADMIN.name)
+                const isAdmin = tokenBody.roles.includes(UserType.ADMIN.value)
                 if (!isSameUser && !isAdmin) {
                     throw new ApiError(ErrorCode.UNAUTHORIZED, 'Insufficient permissions')
                 }
@@ -26,7 +26,7 @@ const handleUser = (targetFunction) =>
                 const { id } = tokenBody
                 const user = usersModel.findById(id)
                 if (!user) {
-                    throw new ApiError(ErrorCode.UNAUTHORIZED, 'Token user not found')
+                    throw new ApiError(ErrorCode.UNAUTHORIZED, 'User token not found')
                 }
                 req.user = user
                 return await targetFunction(req)

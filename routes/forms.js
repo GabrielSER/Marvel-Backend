@@ -7,7 +7,7 @@ const {
     createForm,
     updateForm,
     deleteForm
-} = require('../controllers/Forms')
+} = require('../controllers/forms')
 
 
 router.get('/', handleError(getForms))
