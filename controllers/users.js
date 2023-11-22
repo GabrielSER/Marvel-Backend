@@ -44,8 +44,10 @@ const generateUserToken = async (userDetails) => {
     id: user._id,
     roles: user.roles
   }
+
   return {
-    token: generateToken(tokenBody)
+    token: generateToken(tokenBody),
+    userId: user._id
   }
 }
 
