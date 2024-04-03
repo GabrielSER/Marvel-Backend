@@ -37,6 +37,6 @@ app.use('/api', require('./routes'))
 // Serve frontend
 app.use(express.static(path.join(__dirname, SERVE_PATH)))
 
-app.get('/', (_, res) => {
+app.use('/*', (_, res) => {
     res.sendFile(path.join(__dirname, SERVE_PATH, 'index.html'))
 })
