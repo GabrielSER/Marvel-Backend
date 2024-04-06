@@ -1,11 +1,13 @@
 const mongoose = require('mongoose')
-const { ObjectId } = mongoose.Types
 const { formsModel, attributeModel } = require('../models')
 const { getAttributeSync } = require('./attributes')
 const { ApiError, ErrorCode } = require('../common/apiError')
 
 const getForms = async () =>
   (await formsModel.find({})).map(formView)
+
+const getFormImages = async () =>
+  (await formsModel.find({})).map(form => form.image)
 
 const getForm = async (id) =>
   formView(await formsModel.findById(id))
@@ -85,6 +87,7 @@ const attributesView = (attributes) =>
 module.exports = {
   getForms,
   getForm,
+  getFormImages,
   createForm,
   updateForm,
   deleteForm

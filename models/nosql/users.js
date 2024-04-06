@@ -14,7 +14,10 @@ const typeValues = Object.values(UserType).map(type => type.value)
 
 const UserScheme = new mongoose.Schema(
     {
-        _id: ObjectId,
+        _id: { 
+            type: ObjectId,
+            auto: true 
+        },
         name: {
             type: String
         },

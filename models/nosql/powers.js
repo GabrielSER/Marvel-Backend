@@ -4,7 +4,10 @@ const { ObjectId } = mongoose.Types
 
 const PowerScheme = new Schema(
     {
-        _id: ObjectId,
+        _id: { 
+            type: ObjectId,
+            auto: true 
+        },
         name: {
             type: String,
         },

@@ -18,7 +18,10 @@ const typeValues = Object.values(CharacterType).map(type => type.value)
 
 const CharacterScheme = new Schema(
     {
-        _id: ObjectId,
+        _id: { 
+            type: ObjectId,
+            auto: true 
+        },
         name: {
             type: String
         },

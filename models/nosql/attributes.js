@@ -18,7 +18,10 @@ const typeValues = Object.values(AttributeType).map(type => type.value)
 
 const AttributeScheme = new Schema(
     {
-        _id: ObjectId,
+        _id: { 
+            type: ObjectId,
+            auto: true 
+        },
         uniqueName: {
             type: String
         },

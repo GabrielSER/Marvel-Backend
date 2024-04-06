@@ -19,7 +19,10 @@ const typeValues = Object.values(FormType).map(type => type.value)
 
 const FormScheme = new Schema(
     {
-        _id: ObjectId,
+        _id: { 
+            type: ObjectId,
+            auto: true 
+        },
         name: {
             type: String
         },

@@ -4,7 +4,10 @@ const { ObjectId } = mongoose.Types
 
 const AttributeValueScheme = new Schema(
     {
-        _id: ObjectId,
+        _id: { 
+            type: ObjectId,
+            auto: true 
+        },
         attributeId: {
             type: ObjectId
         },

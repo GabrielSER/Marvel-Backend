@@ -12,7 +12,6 @@ const {
     deleteCharacter
 } = require('../controllers/characters')
 
-
 router.post('/admin', handleError(req => batchInsert(req.body)))
 
 router.get('/', handleError(getCharacters))
@@ -24,6 +23,5 @@ router.post('/', handleError(req => createCharacter(req.body)))
 router.put('/:id', handleError(req => updateCharacter(req.params.id, req.body)))
 
 router.delete('/:id', handleError(req => deleteCharacter(req.params.id)))
-
 
 module.exports = router
