@@ -32,6 +32,18 @@ const FormScheme = new Schema(
         attributeStack: {
             type: AttributesStackScheme
         },
+        stats: {
+            type: Map,
+            of: Number
+          },
+        skills: {
+            type: Map,
+            of: Number
+          },
+        specialSkills: {
+            type: Map,
+            of: Number
+        },
         abilities: [{
             type: String
         }],

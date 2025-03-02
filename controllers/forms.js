@@ -58,31 +58,16 @@ const deleteForm = async (id) => {
 }
 
 const formView = (form) => {
-  const { attributeStack } = form
-  const { stats, skills, specialSkills } = attributeStack
+  const { stats, skills, specialSkills } = form
+  
   const view = {
     ...form.toObject(),
-    stats: attributesView(stats),
-    skills: attributesView(skills),
-    specialSkills: attributesView(specialSkills)
+    stats: stats,
+    skills: skills,
+    specialSkills: specialSkills
   }
-  delete view.attributeStack
   return view
 }
-
-const attributesView = (attributes) =>
-  attributes.map(attributeValue => {
-    const { _id, attributeId, value } = attributeValue
-    const attribute = getAttributeSync(attributeId)
-    const { name, uniqueName } = attribute
-    return {
-      _id,
-      attributeId,
-      name,
-      uniqueName,
-      value
-    }
-  })
 
 module.exports = {
   getForms,
