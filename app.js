@@ -40,3 +40,4 @@ app.use(express.static(path.join(__dirname, SERVE_PATH)))
 app.use('/*', (_, res) => {
     res.sendFile(path.join(__dirname, SERVE_PATH, 'index.html'))
 })
+
