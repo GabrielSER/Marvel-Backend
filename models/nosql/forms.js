@@ -47,6 +47,9 @@ const FormScheme = new Schema(
         abilities: [{
             type: String
         }],
+        progression: [{
+            type: String
+        }],
         weaknesses: [{
             type: String
         }],
