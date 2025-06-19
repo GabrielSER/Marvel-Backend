@@ -39,7 +39,7 @@ const PowerScheme = new Schema(
             type: String
         }],
         chance: [{
-            type: Number
+            type: String
         }],
         module: {
             type: String
