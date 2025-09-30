@@ -7,67 +7,123 @@ const {
 const { ApiError, ErrorCode } = require('../common/apiError')
 const mongoose = require('mongoose')
 
-// PP progression based on POWER stat at level 1
+/** PP at level 1 per POWER stat 1..10 */
 const PP_BY_STAT_L1 = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
-const isOID = (v) => mongoose.Types.ObjectId.isValid(String(v))
+const isHex24 = (v) => /^[a-f\d]{24}$/i.test(String(v || ''))
 
-function bad(code, msg) {
-  throw new ApiError(code, msg)
-}
-
+function bad(code, msg) { throw new ApiError(code, msg) }
 const baseHP = (form) => Number(form?.stats?.hp || 0)
 const calcPP = (form) => {
   const p = Math.max(1, Math.min(10, Number(form?.stats?.power || 1)))
   return PP_BY_STAT_L1[p]
 }
 
-// normalize a slug like "spider-man" back to "Spider-Man"
+// e.g. "spider-man" -> "Spider-Man"
 function denormalizeSlug(s = '') {
-  if (!s) return s
   return s
     .split('-')
-    .map((p) => (p ? p[0].toUpperCase() + p.slice(1) : p))
+    .map(p => (p ? p[0].toUpperCase() + p.slice(1) : p))
     .join('-')
 }
 
-async function findCharacterByIdOrName(idOrName) {
-  console.log("Looking up characterId:", characterId)
-const found = await charactersModel.findById(characterId).lean()
-console.log("Direct findById result:", found)
-
-
+/**
+ * Find character regardless of whether _id was stored as ObjectId or string.
+ * Also accepts exact name or a slug-ified name.
+ */
+async function findCharacterFlexible(idOrName) {
   if (!idOrName) return null
   const raw = String(idOrName).trim()
 
-  // 🔑 FIX: let mongoose handle coercion
-  const byId = await charactersModel.findById(raw).lean()
-  if (byId) return byId
+  // 1) Try by ObjectId (Mongoose cast)
+  if (isHex24(raw)) {
+    try {
+      const byId = await charactersModel.findById(raw).lean()
+      if (byId) return byId
+    } catch (_) { /* ignore cast errors */ }
 
-  // fallback by name
+    // 1b) Native driver: _id stored as string "63e9..." (no casting)
+    const nativeStr = await charactersModel.collection.findOne({ _id: raw })
+    if (nativeStr) return nativeStr
+
+    // 1c) Native driver: _id stored as real ObjectId (safety duplicate)
+    try {
+      const oid = new mongoose.Types.ObjectId(raw)
+      const nativeOid = await charactersModel.collection.findOne({ _id: oid })
+      if (nativeOid) return nativeOid
+    } catch (_) { /* ignore */ }
+  } else {
+    // 2) Not a 24-hex: maybe string _id (like "Spider-Man") or name
+    const nativeStrId = await charactersModel.collection.findOne({ _id: raw })
+    if (nativeStrId) return nativeStrId
+  }
+
+  // 3) Fallbacks by name
   const byName = await charactersModel.findOne({ name: raw }).lean()
   if (byName) return byName
 
-  return charactersModel.findOne({ name: denormalizeSlug(raw) }).lean()
+  const bySlugName = await charactersModel.findOne({ name: denormalizeSlug(raw) }).lean()
+  if (bySlugName) return bySlugName
+
+  return null
 }
 
-async function createSheet(userId, characterIdOrName) {
-  console.log('createSheet payload:', { userId, characterIdOrName })
+/**
+ * Find form regardless of whether _id was stored as ObjectId or string.
+ */
+async function findFormFlexible(formIdOrName) {
+  if (!formIdOrName) return null
+  const raw = String(formIdOrName).trim()
 
-  const ch = await findCharacterByIdOrName(characterIdOrName)
+  // Try ObjectId via Mongoose
+  if (isHex24(raw)) {
+    try {
+      const byId = await formsModel.findById(raw).lean()
+      if (byId) return byId
+    } catch (_) { /* ignore */ }
+
+    // Native string _id
+    const nativeStr = await formsModel.collection.findOne({ _id: raw })
+    if (nativeStr) return nativeStr
+
+    // Native ObjectId _id
+    try {
+      const oid = new mongoose.Types.ObjectId(raw)
+      const nativeOid = await formsModel.collection.findOne({ _id: oid })
+      if (nativeOid) return nativeOid
+    } catch (_) { /* ignore */ }
+  } else {
+    // Maybe the form _id is a string
+    const nativeStr = await formsModel.collection.findOne({ _id: raw })
+    if (nativeStr) return nativeStr
+  }
+
+  // Optional: fallback by name
+  const byName = await formsModel.findOne({ name: raw }).lean()
+  if (byName) return byName
+
+  return null
+}
+
+/**
+ * Create sheet from character's default form.
+ * Accepts id OR name for character.
+ */
+async function createSheet(userId, characterIdOrName) {
+  const ch = await findCharacterFlexible(characterIdOrName)
   if (!ch) bad(ErrorCode.NOT_FOUND, 'Character not found')
 
   if (!ch.defaultForm) bad(ErrorCode.BAD_REQUEST, 'Character has no defaultForm')
 
-  const form = await formsModel.findById(ch.defaultForm).lean()
-  if (!form) bad(ErrorCode.BAD_REQUEST, 'Default form not found')
+  const form = await findFormFlexible(ch.defaultForm)
+  if (!form) bad(ErrorCode.BAD_REQUEST, `Default form not found for character ${ch.name || ch._id}`)
 
   const maxHP = baseHP(form)
   const maxPP = calcPP(form)
 
   const doc = await userCharactersModel.create({
     userId: String(userId || 'PUBLIC_DEBUG_USER'),
-    characterId: String(ch._id),
-    formId: String(form._id),
+    characterId: String(ch._id),    // store as string consistently
+    formId: String(form._id),       // store as string consistently
     level: 1,
     totalSP: 10,
     spentSP: 0,
@@ -78,14 +134,14 @@ async function createSheet(userId, characterIdOrName) {
     skillLevels: [],
     statOverrides: [],
     unlockedPowers: [],
-    notes: '',
+    notes: ''
   })
 
   return doc
 }
 
 async function getMine(userId) {
-  return await userCharactersModel
+  return userCharactersModel
     .find({ userId: String(userId || 'PUBLIC_DEBUG_USER') })
     .lean()
 }
@@ -99,8 +155,4 @@ async function getOne(userId, id) {
   return doc
 }
 
-module.exports = {
-  createSheet,
-  getMine,
-  getOne,
-}
+module.exports = { createSheet, getMine, getOne }
