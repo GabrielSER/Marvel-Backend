@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', false)
-
 const { DB_URI } = process.env
 
 const mongoOptions = {
